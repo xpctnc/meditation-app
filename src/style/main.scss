@@ -13,6 +13,22 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  &.active {
+
+    div.techniques {
+      display: none;
+    }
+
+    svg.return {
+      display: inline-block;
+    }
+
+    div.breathe {
+      display: flex;
+    }
+
+  }
 }
 
 .container > h2 {
@@ -20,14 +36,12 @@ body {
   align-self: flex-start;
 }
 
+
 div.techniques {
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
 
-  &.hide {
-    display: none;
-  }
 
   > div {
     width: 60px;
@@ -59,7 +73,7 @@ div.techniques {
   .box {
 
     > div {
-      animation: 12s linear infinite box;
+      animation: 16s linear infinite boxd;
     }
   }
 
@@ -71,6 +85,14 @@ div.techniques {
   }
 }
 
+svg.return {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  cursor: pointer;
+}
+
 div.breathe {
   display: none;
   justify-content: center;
@@ -78,9 +100,6 @@ div.breathe {
   width: 200px;
   height: 200px;
 
-  &.active {
-    display: flex;
-  }
 
 
   .breathe-circle {
@@ -89,6 +108,14 @@ div.breathe {
     transform: scale(.5);
     width: 200px;
     height: 200px;
+
+    &.deep {
+      animation: 19s linear infinite deep;
+    }
+
+    &.box {
+      animation: 16s linear infinite box;
+    }
   }
 
   span {

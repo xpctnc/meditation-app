@@ -11,6 +11,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh; }
+  .container.active div.techniques {
+    display: none; }
+  .container.active svg.return {
+    display: inline-block; }
+  .container.active div.breathe {
+    display: flex; }
 
 .container > h2 {
   position: absolute;
@@ -20,8 +26,6 @@ div.techniques {
   display: flex;
   justify-content: space-evenly;
   width: 100vw; }
-  div.techniques.hide {
-    display: none; }
   div.techniques > div {
     width: 60px;
     display: flex;
@@ -39,9 +43,16 @@ div.techniques {
   div.techniques .deep > div {
     animation: 19s linear infinite deep; }
   div.techniques .box > div {
-    animation: 12s linear infinite box; }
+    animation: 16s linear infinite boxd; }
   div.techniques .awake > div {
     animation: 8s linear infinite awake; }
+
+svg.return {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  cursor: pointer; }
 
 div.breathe {
   display: none;
@@ -49,14 +60,16 @@ div.breathe {
   align-items: center;
   width: 200px;
   height: 200px; }
-  div.breathe.active {
-    display: flex; }
   div.breathe .breathe-circle {
     background-color: #000;
     clip-path: circle(49%);
     transform: scale(0.5);
     width: 200px;
     height: 200px; }
+    div.breathe .breathe-circle.deep {
+      animation: 19s linear infinite deep; }
+    div.breathe .breathe-circle.box {
+      animation: 16s linear infinite box; }
   div.breathe span {
     color: #FFF;
     cursor: pointer;
