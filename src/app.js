@@ -2,31 +2,28 @@ const container = document.querySelector('.container');
 const returnBtn = document.querySelector('svg.return')
 const breatheCircle = document.querySelector('div.breathe .breathe-circle');
 const breatheCircleSpan = document.querySelector('div.breathe span')
-const deep = document.querySelector('div.deep h3')
-const box = document.querySelector('div.box h3')
-const awake = document.querySelector('div.awake h3')
+const methods = document.querySelectorAll('div > div > div > h3')
+
+methods.forEach(i => i.addEventListener('click', () => {
+    container.classList.add('active');
+    method = i.textContent
+    console.log(method);
+}))
 
 let method;
-
-deep.addEventListener('click', () => {
-    container.classList.add('active');
-    breatheCircle.classList.add('deep');
-})
-
-box.addEventListener('click', () => {
-    container.classList.add('active');
-    method = box.textContent;
-    console.log(method);
-})
-
-
-
-awake.addEventListener('click', () => {
-    container.classList.add('active');
-})
-
-
 let bool;
+
+const deepBreathing = () => {
+    setTimeout(() => {
+        bool ? breatheCircleSpan.textContent = 'inhale' : ''
+        setTimeout(() => {
+            bool ? breatheCircleSpan.textContent = 'hold' : ''
+            setTimeout(() => {
+                bool ? breatheCircleSpan.textContent = 'exhale' : ''
+            }, 7000)
+        }, 4000)
+    }, 0)
+}
 
 const boxBreathing = () => {
     setTimeout(() => {
@@ -43,12 +40,34 @@ const boxBreathing = () => {
     },0)
 }
 
+const awakeBreathing = () => {
+    setTimeout(() => {
+        bool ? breatheCircleSpan.textContent = 'inhale' : ''
+        setTimeout(() => {
+            bool ? breatheCircleSpan.textContent = 'exhale' : ''
+        }, 6000)
+    }, 0)
+}
+
 breatheCircleSpan.addEventListener('click', () => {
     bool = true;
     breatheCircle.classList.add(method)
-    breatheCircle.classList.contains(method) ? boxBreathing() : ''
-})
+    if(method == 'deep') {
+        deepBreathing();
+        setInterval(deepBreathing, 19000);
+    }
+    else if(method == 'box') {
+        boxBreathing();
+        setInterval(boxBreathing, 16000)
+    }
+    else if(method == 'awake') {
+        awakeBreathing()
+        setInterval(awakeBreathing, 8000)
+    }
 
+    console.log(method)
+
+})
 
 returnBtn.addEventListener('click', () => {
     container.classList.remove('active');

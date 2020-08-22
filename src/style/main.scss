@@ -88,8 +88,8 @@ div.techniques {
 svg.return {
   display: none;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 30px;
+  left: 30px;
   cursor: pointer;
 }
 
@@ -115,6 +115,10 @@ div.breathe {
 
     &.box {
       animation: 16s linear infinite box;
+    }
+
+    &.awake {
+      animation: 8s linear infinite awake;
     }
   }
 

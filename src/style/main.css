@@ -50,8 +50,8 @@ div.techniques {
 svg.return {
   display: none;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 30px;
+  left: 30px;
   cursor: pointer; }
 
 div.breathe {
@@ -70,6 +70,8 @@ div.breathe {
       animation: 19s linear infinite deep; }
     div.breathe .breathe-circle.box {
       animation: 16s linear infinite box; }
+    div.breathe .breathe-circle.awake {
+      animation: 8s linear infinite awake; }
   div.breathe span {
     color: #FFF;
     cursor: pointer;
