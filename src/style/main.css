@@ -1,0 +1,60 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #eeeeee; }
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh; }
+
+.technique {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw; }
+  .technique div h3 {
+    text-align: center; }
+  .technique div > div {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    clip-path: circle(49%); }
+  .technique .deep > div {
+    animation: 19s linear infinite deep; }
+  .technique .box > div {
+    animation: 12s linear infinite box; }
+  .technique .awake > div {
+    animation: 8s linear infinite awake; }
+
+@keyframes deep {
+  0% {
+    transform: scale(0.5); }
+  21% {
+    transform: scale(1); }
+  58% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0.5); } }
+@keyframes box {
+  0% {
+    transform: scale(0.5); }
+  25% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1); }
+  75% {
+    transform: scale(0.5); }
+  100% {
+    transform: scale(0.5); } }
+@keyframes awake {
+  0% {
+    transform: scale(0.5); }
+  75% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0.5); } }
+
+/*# sourceMappingURL=main.css.map */
